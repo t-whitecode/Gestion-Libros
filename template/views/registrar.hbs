@@ -1,0 +1,57 @@
+{{>header}}
+    <br>
+    <br>
+    <br>
+<center>
+    <br>
+        
+        <div id= "Registrar" class= "row">
+            <div class = "col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class= "card card-signin my-5">
+                    <div class= "card-body">
+                        <h5 class= "card-title text-center">Registro</h5>     
+                        <form action="/registra" method="post" enctype ="multipart/form-data">
+                            <div class="form-label-group">
+                                <label for="nombreUsuario">Nombre de Usuario</label>
+                                <input type="text" name="nombreUsuario" class="form-control" placeholder="Ingrese un Nombre de Usuario" required autofocus>
+                                
+                            </div>
+                            <div class="form-label-group">
+                                <label for="nombyapel">Nombre y Apellido</label>
+                                <input type="text" name="nombyapel" class="form-control" placeholder="Ingrese su Nombre" required autofocus>
+                            </div>
+                            <div class="form-label-group">
+                                <label for="correo">Correo Electrónico</label>
+                                <input type="email" name="correo" class="form-control" placeholder="Ingrese su e-mail" required autofocus>
+                                
+                            </div>
+                            <div class="form-label-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="number" name="telefono" class="form-control" placeholder="Ingrese su Teléfono" required autofocus>
+                                
+                            </div>
+                            <div class="form-label-group">
+                                <label for="contrasenaUsuario">Contraseña</label>
+                                <input type="password" name="contrasenaUsuario" class="form-control" placeholder="Ingrese una contraseña" required>
+                                
+                            </div>
+                            <div class="form-label-group">
+                            <p>Rol:
+                            Usuario <input type="radio" name="rol" value="Usuario" checked/>
+                            Administrador <input type="radio" name="rol" value="admin"/></p>
+
+                            </div>
+                            <div class="form-label-group">
+                                <label>Foto de Perfil</label>
+                                <input type="file" name="archivo" class="form-control"  accept= "image/*" required>
+                                
+                            </div>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Registrar</button>
+                            <hr class="my-4">
+                        </form>
+                    </div>
+                </div>
+            </div>
+       
+</center>
+    {{>footer}}

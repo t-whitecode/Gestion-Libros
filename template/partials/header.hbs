@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+  <!--Bootstrap css -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  type="text/css">
+  <title>LIBROS</title>       	
+</head>
+
+<body>	
+
+   <div class="container" style="border-left: 1px solid silver; border-right: 1px solid silver  "> 
+      
+      <div class="row">
+      
+        <div class="d-none d-md-block col-md-4">
+          <h2> {{titulo}} </h2>
+        </div>
+      </div>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="/">INICIO </a>
+            </li>
+                  
+         {{#if sesion1}} 
+            <li class="nav-item">
+               <a class="nav-link" href='/subirL'>SUBIR</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="/lista">LISTADO </a>
+            </li>                 
+         </ul>       
+         <form class="form-inline my-2 my-lg-0" action="/salir" method="get">
+            <h3>{{nombre}}</h3>             
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Salir</button>
+         </form>  
+         
+         {{else sesion2}} 
+            <li class="nav-item">
+               <a class="nav-link" href='/gestionarL'>LIBROS</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="/gestionarP">PERSONAS</a>
+            </li>                 
+         </ul>       
+         <form class="form-inline my-2 my-lg-0" action="/salir" method="get">
+            <h3>{{nombre}}</h3>             
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Salir</button>
+         </form>  
+         
+          
+         {{else}}
+            <li class="nav-item">
+               <a class="nav-link" href='/registrar'>REGISTRARSE</a>
+            </li> 
+         </ul> 
+         <form class="form-inline my-2 my-lg-0" action="/ingresar" method="post">
+            <input class="form-control mr-sm-2" type="text" name="nombreUsuario" placeholder="Nombre de usuario" >  
+            <input class="form-control mr-sm-2" type="password" name="contrasenaUsuario" placeholder="Contraseña" >                 
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Ingresar</button>
+         </form>  
+         {{/if}}  
+
+      </div>
+    </nav>

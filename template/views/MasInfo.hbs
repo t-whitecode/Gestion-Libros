@@ -1,0 +1,22 @@
+{{>header}}
+<h1>{{{mensaje}}}</h1>
+<br>
+<h2>{{{autor}}}</h2>
+<br>
+
+<div class="d-none d-md-block col-md-4">
+    <img src="data:img/jpg;base64,{{avatar}}" class="img-fluid"> 
+</div>
+<br>
+<h3>{{{descripcion}}}</h3>
+<br>
+<form class="form-inline my-2 my-lg-0" action="/calificar" method="post"> 
+            <input class="form-control mr-sm-2" type="number" name="calificacion" placeholder="Califique el Libro" >                 
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">CALIFICAR</button>
+         </form> 
+<br>
+<h2>Ingresar al Chat</h2>  
+   	<form action="/chat">
+		<button class="btn btn-primary my-2 my-sm-0" type="submit">INGRESAR</button>				
+   	</form>
+{{>footer}}
